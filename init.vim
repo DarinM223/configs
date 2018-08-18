@@ -198,7 +198,6 @@ let g:go_fmt_autosave = 1
 let $GOPATH = "/Users/darin/go"
 let $GOROOT="/usr/local/Cellar/go/1.6/libexec"
 
-let g:ghcid_background = 1
 set hidden " Used for ghcid so that buffer closes when there are no errors
 
 " Ties Eclim with YCM autocomplete
