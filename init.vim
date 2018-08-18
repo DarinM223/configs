@@ -100,7 +100,6 @@ Plugin 'elixir-lang/vim-elixir'     " elixir highlighting and indentation
 Plugin 'mtscout6/syntastic-local-eslint.vim' " Prefer local eslint over global
 
 " First install ghc-mod with 'cabal install ghc-mod'
-Plugin 'eagletmt/neco-ghc'          " haskell
 Plugin 'dag/vim2hs'                 " haskell tools
 
 " Autoreloads code in GHC and fills quickfix window with errors.
@@ -109,6 +108,8 @@ Plugin 'dag/vim2hs'                 " haskell tools
 " a Ghcid window (for more complete error messages).
 " First install ghcid with 'cabal install ghcid'
 Plugin 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
+" For formatting Haskell code using brittany.
+Plugin 'sbdchd/neoformat'
 
 call vundle#end()         " required
 filetype plugin indent on " required
@@ -145,6 +146,8 @@ map <C-n> :NERDTreeTabsToggle<CR>
 vmap <C-C> "+y
 " Ctrl-t opens a new tab
 nnoremap <C-t> :tabnew<CR>
+" Ctrl-f formats using Neoformat (right now only formatting Haskell).
+nnoremap <C-f> :Neoformat<CR>
 
 nmap <F9> :TagbarToggle<CR>
 noremap <F5> :Autoformat<CR>
@@ -199,6 +202,7 @@ let $GOPATH = "/Users/darin/go"
 let $GOROOT="/usr/local/Cellar/go/1.6/libexec"
 
 set hidden " Used for ghcid so that buffer closes when there are no errors
+let g:neoformat_enabled_haskell = ['brittany']
 
 " Ties Eclim with YCM autocomplete
 let g:EclimCompletionMethod='omnifunc'
@@ -315,7 +319,7 @@ au FileType java setl sw=4 sts=4 et
 au FileType scala setl sw=2 sts=2 et
 au FileType vim setl sw=4 sts=4 et
 au FileType php setl sw=4 sts=4 et
-au FileType haskell setl omnifunc=necoghc#omnifunc
+au FileType haskell setl sw=2 sts=2 et
 au FileType verilog setl sw=4 sts=4 et
 au FileType matlab setl sw=2 sts=2 et
 au FileType html setl sw=2 sts=2 et
