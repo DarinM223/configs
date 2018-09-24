@@ -43,3 +43,4 @@ common opts
                -Wincomplete-uni-patterns
                -Wredundant-constraints
                -fshow-hole-constraints
+               -haddock
