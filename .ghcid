@@ -1,0 +1,1 @@
+--restart=[cabal project name].cabal --command "cabal new-repl --ghc-options=-fno-code --ghc-options=-fno-break-on-error --ghc-options=-fno-break-on-exception --ghc-options=-v1 --ghc-options=-fno-hide-source-paths --ghc-options=-ferror-spans --ghc-options=-j --ghc-options=-fdiagnostics-color=always"
