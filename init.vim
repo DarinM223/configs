@@ -95,11 +95,23 @@ Plugin 'tpope/vim-fireplace'        " clojure dynamic evaluation
 " Go to ~/.vim/bundle/parinfer-rust and run `cargo build --release`.
 Plugin 'eraserhd/parinfer-rust'
 
+" Slime-like Common Lisp environment for vim
+" To install:
+" 1. Install ncat (in Ubuntu `sudo apt-get install nmap`)
+" 2. Install QuickLisp
+"    a. curl -O https://beta.quicklisp.org/quicklisp.lisp
+"    b. sbcl --load quicklisp.lisp
+"    c. (quicklisp-quickstart:install)
+"    d. (ql:add-to-init-file)
+" 3. sbcl --load <your bundle dir>/vlime/lisp/start-vlime.lisp
+"
+" Leader key is '\', for help with commands use '\?' in normal mode.
+Plugin 'l04m33/vlime', { 'rtp': 'vim/' }
+
 Plugin 'nvie/vim-flake8'            " python linter plugin
 Plugin 'elixir-lang/vim-elixir'     " elixir highlighting and indentation
 Plugin 'mtscout6/syntastic-local-eslint.vim' " Prefer local eslint over global
 
-" First install ghc-mod with 'cabal install ghc-mod'
 Plugin 'dag/vim2hs'                 " haskell tools
 
 " Autoreloads code in GHC and fills quickfix window with errors.
@@ -151,6 +163,13 @@ nnoremap <C-f> :Neoformat<CR>
 
 nmap <F9> :TagbarToggle<CR>
 noremap <F5> :Autoformat<CR>
+
+" Switches between windows with Ctrl-keys
+" with keys being jkhl similar to normal vim navigation.
+noremap <C-J>j <C-W>w
+noremap <C-K>k <C-W>W
+noremap <C-L>l <C-W>l
+noremap <C-H>h <C-W>h
 
 "
 " Vim Explore mode configuration
