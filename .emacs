@@ -8,7 +8,7 @@
 
 (require 'package)
 
-(setq package-list '(evil use-package parinfer racket-mode))
+(setq package-list '(auto-complete evil use-package parinfer racket-mode))
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
@@ -43,6 +43,14 @@
     (add-hook 'racket-mode-hook #'parinfer-mode)))
 
 (setq evil-want-C-u-scroll t)
+
+(ac-config-default)
+(global-auto-complete-mode t)
+
+(defun auto-complete-mode-maybe ()
+  "No maybe for you. Only AC!"
+  (unless (minibufferp (current-buffer))
+    (auto-complete-mode 1)))
 
 (require 'evil)
 (evil-mode 1)
