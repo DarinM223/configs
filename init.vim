@@ -222,6 +222,7 @@ let $GOROOT="/usr/local/Cellar/go/1.6/libexec"
 
 set hidden " Used for ghcid so that buffer closes when there are no errors
 let g:neoformat_enabled_haskell = ['brittany']
+let g:vlime_contribs = ['SWANK-ASDF', 'SWANK-PACKAGE-FU', 'SWANK-PRESENTATIONS', 'SWANK-FANCY-INSPECTOR', 'SWANK-C-P-C', 'SWANK-ARGLISTS', 'SWANK-REPL', 'SWANK-FUZZY', 'SWANK-TRACE-DIALOG']
 
 " Ties Eclim with YCM autocomplete
 let g:EclimCompletionMethod='omnifunc'
