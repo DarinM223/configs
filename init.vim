@@ -162,6 +162,11 @@ nnoremap <C-t> :tabnew<CR>
 " Ctrl-f formats using Neoformat (right now only formatting Haskell).
 nnoremap <C-f> :Neoformat<CR>
 
+" Meta (Alt) key with the left and right arrow keys will move a tab
+" to the left/right position.
+map <A-Left> :-tabmove<CR>
+map <A-Right> :+tabmove<CR>
+
 nmap <F9> :TagbarToggle<CR>
 noremap <F5> :Autoformat<CR>
 
