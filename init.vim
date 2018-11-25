@@ -90,6 +90,7 @@ Plugin 'rust-lang/rust.vim'         " rust syntax
 Plugin 'timonv/vim-cargo'           " Rust cargo runner
 Plugin 'Chiel92/vim-autoformat'     " custom formatting with rustfmt integration
 Plugin 'tpope/vim-fireplace'        " clojure dynamic evaluation
+Plugin 'idris-hackers/idris-vim'    " idris mode
 
 " Clojure structured editing of lisp s expressions
 " Go to ~/.vim/bundle/parinfer-rust and run `cargo build --release`.
