@@ -21,6 +21,7 @@ common exts
                     , KindSignatures
                     , LambdaCase
                     , MultiParamTypeClasses
+                    , NamedFieldPuns
                     , OverloadedStrings
                     , PatternSynonyms
                     , RankNTypes

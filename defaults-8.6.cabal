@@ -23,6 +23,7 @@ common exts
                     , KindSignatures
                     , LambdaCase
                     , MultiParamTypeClasses
+                    , NamedFieldPuns
                     , NumericUnderscores
                     , OverloadedStrings
                     , PatternSynonyms
