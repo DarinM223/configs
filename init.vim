@@ -79,18 +79,19 @@ Plugin 'sickill/vim-monokai'
 Plugin 'morhetz/gruvbox'
 
 " language based plugins
-Plugin 'adimit/prolog.vim'          " prolog
-Plugin 'pangloss/vim-javascript'    " javascript
-Plugin 'marijnh/tern_for_vim'       " javascript autocompletion
-Plugin 'mxw/vim-jsx'                " jsx
-Plugin 'digitaltoad/vim-jade'       " jade
-Plugin 'derekwyatt/vim-scala'       " scala
-Plugin 'fatih/vim-go'               " golang
-Plugin 'rust-lang/rust.vim'         " rust syntax
-Plugin 'timonv/vim-cargo'           " Rust cargo runner
-Plugin 'Chiel92/vim-autoformat'     " custom formatting with rustfmt integration
-Plugin 'tpope/vim-fireplace'        " clojure dynamic evaluation
-Plugin 'idris-hackers/idris-vim'    " idris mode
+Plugin 'adimit/prolog.vim'                 " prolog
+Plugin 'pangloss/vim-javascript'           " javascript
+Plugin 'marijnh/tern_for_vim'              " javascript autocompletion
+Plugin 'mxw/vim-jsx'                       " jsx
+Plugin 'digitaltoad/vim-jade'              " jade
+Plugin 'derekwyatt/vim-scala'              " scala
+Plugin 'fatih/vim-go'                      " golang
+Plugin 'rust-lang/rust.vim'                " rust syntax
+Plugin 'timonv/vim-cargo'                  " Rust cargo runner
+Plugin 'Chiel92/vim-autoformat'            " custom formatting with rustfmt integration
+Plugin 'tpope/vim-fireplace'               " clojure dynamic evaluation
+Plugin 'idris-hackers/idris-vim'           " idris mode
+Plugin 'purescript-contrib/purescript-vim' " purescript
 
 " Clojure structured editing of lisp s expressions
 " Go to ~/.vim/bundle/parinfer-rust and run `cargo build --release`.
@@ -233,6 +234,11 @@ let g:vlime_contribs = ['SWANK-ASDF', 'SWANK-PACKAGE-FU', 'SWANK-PRESENTATIONS',
 " Ties Eclim with YCM autocomplete
 let g:EclimCompletionMethod='omnifunc'
 
+let purescript_indent_where = 1
+let purescript_indent_case = 2
+let purescript_indent_do = 2
+let purescript_indent_in = 0
+
 "
 " Syntastic Configuration
 "
@@ -347,6 +353,7 @@ au FileType scala setl sw=2 sts=2 et
 au FileType vim setl sw=4 sts=4 et
 au FileType php setl sw=4 sts=4 et
 au FileType haskell setl sw=2 sts=2 et
+au FileType purescript setl sw=2 sts=2 et
 au FileType verilog setl sw=4 sts=4 et
 au FileType matlab setl sw=2 sts=2 et
 au FileType html setl sw=2 sts=2 et
