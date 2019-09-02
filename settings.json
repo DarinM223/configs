@@ -1,0 +1,8 @@
+{
+    "keyboard.dispatch": "keyCode",
+    "editor.fontSize": 13,
+    "editor.parameterHints.enabled": false,
+    "metals.javaHome": "/usr/lib/jvm/java-8-openjdk-amd64",
+    "workbench.colorTheme": "Gruvbox Dark (Hard)",
+    "C_Cpp.updateChannel": "Insiders",
+}
