@@ -1,0 +1,7 @@
+JakeBecker.elixir-ls
+ms-vscode.cpptools
+rust-lang.rust
+scala-lang.scala
+scalameta.metals
+tomphilbin.gruvbox-themes
+vscodevim.vim
