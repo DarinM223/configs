@@ -45,6 +45,12 @@ bindsym $mod+f exec dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# Pulse Audio controls
+# NOTE(DarinM223): 1 is the sink number found with `pactl list sinks`
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle # mute sound
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -158,3 +164,8 @@ bar {
         status_command i3status
         tray_output primary
 }
+
+# Starts pa-applet
+# NOTE(DarinM223): first install pa-applet by following the instructions
+# from https://github.com/fernandotcl/pa-applet
+exec --no-startup-id pa-applet
