@@ -17,14 +17,17 @@ default-extensions:
 - FunctionalDependencies
 - GADTs
 - GeneralizedNewtypeDeriving
+- ImplicitParams
 - InstanceSigs
 - KindSignatures
 - LambdaCase
 - MultiParamTypeClasses
+- MultiWayIf
 - NamedFieldPuns
 - OverloadedStrings
 - PatternSynonyms
 - RankNTypes
+- RecordWildCards
 - ScopedTypeVariables
 - StandaloneDeriving
 - TupleSections

@@ -19,16 +19,19 @@ common exts
                     , FunctionalDependencies
                     , GADTs
                     , GeneralizedNewtypeDeriving
+                    , ImplicitParams
                     , InstanceSigs
                     , KindSignatures
                     , LambdaCase
                     , MultiParamTypeClasses
+                    , MultiWayIf
                     , NamedFieldPuns
                     , NumericUnderscores
                     , OverloadedStrings
                     , PatternSynonyms
                     , QuantifiedConstraints
                     , RankNTypes
+                    , RecordWildCards
                     , ScopedTypeVariables
                     , StandaloneDeriving
                     , TupleSections
