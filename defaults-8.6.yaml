@@ -19,10 +19,12 @@ default-extensions:
 - FunctionalDependencies
 - GADTs
 - GeneralizedNewtypeDeriving
+- ImplicitParams
 - InstanceSigs
 - KindSignatures
 - LambdaCase
 - MultiParamTypeClasses
+- MultiWayIf
 - NamedFieldPuns
 - NumericUnderscores
 - OverloadedStrings

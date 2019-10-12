@@ -17,10 +17,12 @@ common exts
                     , FunctionalDependencies
                     , GADTs
                     , GeneralizedNewtypeDeriving
+                    , ImplicitParams
                     , InstanceSigs
                     , KindSignatures
                     , LambdaCase
                     , MultiParamTypeClasses
+                    , MultiWayIf
                     , NamedFieldPuns
                     , OverloadedStrings
                     , PatternSynonyms
