@@ -27,6 +27,7 @@ default-extensions:
 - MultiWayIf
 - NamedFieldPuns
 - NumericUnderscores
+- OverloadedLabels
 - OverloadedStrings
 - PatternSynonyms
 - QuantifiedConstraints

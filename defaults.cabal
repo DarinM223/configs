@@ -24,6 +24,7 @@ common exts
                     , MultiParamTypeClasses
                     , MultiWayIf
                     , NamedFieldPuns
+                    , OverloadedLabels
                     , OverloadedStrings
                     , PatternSynonyms
                     , RankNTypes

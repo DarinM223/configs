@@ -24,6 +24,7 @@ default-extensions:
 - MultiParamTypeClasses
 - MultiWayIf
 - NamedFieldPuns
+- OverloadedLabels
 - OverloadedStrings
 - PatternSynonyms
 - RankNTypes

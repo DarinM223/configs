@@ -27,6 +27,7 @@ common exts
                     , MultiWayIf
                     , NamedFieldPuns
                     , NumericUnderscores
+                    , OverloadedLabels
                     , OverloadedStrings
                     , PatternSynonyms
                     , QuantifiedConstraints
