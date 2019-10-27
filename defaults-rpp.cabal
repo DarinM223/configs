@@ -1,0 +1,54 @@
+common exts
+  default-extensions: BangPatterns
+                    , BlockArguments
+                    , ConstraintKinds
+                    , DataKinds
+                    , DefaultSignatures
+                    , DeriveFoldable
+                    , DeriveFunctor
+                    , DeriveGeneric
+                    , DeriveLift
+                    , DeriveTraversable
+                    , DerivingStrategies
+                    , DerivingVia
+                    , DuplicateRecordFields
+                    , EmptyCase
+                    , ExistentialQuantification
+                    , FlexibleContexts
+                    , FlexibleInstances
+                    , FunctionalDependencies
+                    , GADTs
+                    , GeneralizedNewtypeDeriving
+                    , ImplicitParams
+                    , InstanceSigs
+                    , KindSignatures
+                    , LambdaCase
+                    , MultiParamTypeClasses
+                    , MultiWayIf
+                    , NamedFieldPuns
+                    , NumericUnderscores
+                    , OverloadedLabels
+                    , OverloadedStrings
+                    , PatternSynonyms
+                    , QuantifiedConstraints
+                    , RankNTypes
+                    , RecordWildCards
+                    , ScopedTypeVariables
+                    , StandaloneDeriving
+                    , TupleSections
+                    , TypeApplications
+                    , TypeFamilies
+                    , TypeFamilyDependencies
+                    , TypeOperators
+
+common opts
+  ghc-options: -W
+               -Wcompat
+               -Wincomplete-record-updates
+               -Wincomplete-uni-patterns
+               -Wredundant-constraints
+               -fshow-hole-constraints
+               -haddock
+               -- Install with cabal install record-dot-preprocessor --installdir=$HOME/.cabal/bin
+               -F
+               -pgmF=record-dot-preprocessor
