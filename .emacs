@@ -26,6 +26,9 @@
 
 (eval-when-compile (require 'use-package))
 
+; NOTE: Run (ql:quickload "clhs") first and follow the instructions.
+(load "~/quicklisp/clhs-use-local.el" t)
+
 (use-package parinfer
   :ensure t
   :bind
@@ -43,6 +46,8 @@
     (add-hook 'scheme-mode-hook #'parinfer-mode)
     (add-hook 'lisp-mode-hook #'parinfer-mode)
     (add-hook 'racket-mode-hook #'parinfer-mode)))
+
+(setq-default indent-tabs-mode nil)
 
 (setq evil-want-C-u-scroll t)
 
