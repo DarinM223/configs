@@ -42,7 +42,7 @@ common exts
                     , TypeOperators
 
 common opts
-  ghc-options: -W
+  ghc-options: -Wall
                -Wcompat
                -Wincomplete-record-updates
                -Wincomplete-uni-patterns

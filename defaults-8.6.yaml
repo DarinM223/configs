@@ -42,7 +42,7 @@ default-extensions:
 - TypeOperators
 
 ghc-options:
-- -W
+- -Wall
 - -Wcompat
 - -Wincomplete-record-updates
 - -Wincomplete-uni-patterns
