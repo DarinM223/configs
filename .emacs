@@ -10,7 +10,7 @@
 
 (require 'package)
 
-(setq package-list '(auto-complete evil use-package parinfer racket-mode slime ac-slime gruvbox-theme solarized-theme))
+(setq package-list '(auto-complete evil elscreen use-package parinfer racket-mode slime ac-slime gruvbox-theme solarized-theme))
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
@@ -66,10 +66,18 @@
 
 (require 'evil)
 (evil-mode 1)
+(load "elscreen" "ElScreen" t)
+(elscreen-start)
 
 (define-key evil-normal-state-map (kbd "M-.")
   `(menu-item "" evil-repeat-pop :filter
               ,(lambda (cmd) (if (eq last-command 'evil-repeat-pop) cmd))))
+
+(define-key evil-normal-state-map (kbd "C-w t") 'elscreen-create) ; create tab with `C-w t`
+(define-key evil-normal-state-map (kbd "C-w x") 'elscreen-kill)   ; kill tab with `C-w x`
+(define-key evil-normal-state-map "gT" 'elscreen-previous)        ; previous tab
+(define-key evil-normal-state-map "gt" 'elscreen-next)            ; next tab
+
 
 (load-file (let ((coding-system-for-read 'utf-8))
                 (shell-command-to-string "agda-mode locate")))
