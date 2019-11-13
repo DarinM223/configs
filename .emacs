@@ -6,7 +6,7 @@
 
 (setq inhibit-startup-screen t)
 (setq inferior-lisp-program "/usr/bin/sbcl")
-(setq slime-contribs '(slime-fancy))
+(setq slime-contribs '(slime-fancy slime-cl-indent))
 
 (require 'package)
 
@@ -73,7 +73,7 @@
   `(menu-item "" evil-repeat-pop :filter
               ,(lambda (cmd) (if (eq last-command 'evil-repeat-pop) cmd))))
 
-(define-key evil-normal-state-map (kbd "C-w t") 'elscreen-create) ; create tab with `C-w t`
+(define-key evil-normal-state-map (kbd "C-t") 'elscreen-create)   ; create tab with `C-t`
 (define-key evil-normal-state-map (kbd "C-w x") 'elscreen-kill)   ; kill tab with `C-w x`
 (define-key evil-normal-state-map "gT" 'elscreen-previous)        ; previous tab
 (define-key evil-normal-state-map "gt" 'elscreen-next)            ; next tab
