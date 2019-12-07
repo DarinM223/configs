@@ -10,7 +10,7 @@
 
 (require 'package)
 
-(setq package-list '(auto-complete evil elscreen use-package parinfer racket-mode slime ac-slime gruvbox-theme solarized-theme))
+(setq package-list '(auto-complete evil elscreen use-package parinfer racket-mode slime ac-slime gruvbox-theme solarized-theme linum-relative))
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
@@ -38,7 +38,8 @@
     (setq parinfer-extensions
           '(defaults       ; should be included.
             pretty-parens  ; different paren styles for different modes.
-            evil))         ; If you use Evil.
+            evil           ; If you use Evil.
+            smart-tab))    ; Allows changing indentation of regions with tab.
 
     (add-hook 'clojure-mode-hook #'parinfer-mode)
     (add-hook 'emacs-lisp-mode-hook #'parinfer-mode)
@@ -50,6 +51,7 @@
 (setq-default indent-tabs-mode nil)
 
 (setq evil-want-C-u-scroll t)
+(setq make-backup-files nil)
 
 (ac-config-default)
 (global-auto-complete-mode t)
@@ -68,6 +70,7 @@
 (evil-mode 1)
 (load "elscreen" "ElScreen" t)
 (elscreen-start)
+(linum-relative-global-mode)
 
 (define-key evil-normal-state-map (kbd "M-.")
   `(menu-item "" evil-repeat-pop :filter
