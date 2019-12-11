@@ -1,0 +1,7 @@
+<!-- Put this in ~/.PyCharmCE/config/keymaps/ -->
+<keymap version="1" name="XWin copy" parent="Default for XWin">
+  <action id="ExecuteInPyConsoleAction">
+    <keyboard-shortcut first-keystroke="shift alt e" />
+    <keyboard-shortcut first-keystroke="ctrl alt x" />
+  </action>
+</keymap>
