@@ -4,4 +4,8 @@
     <keyboard-shortcut first-keystroke="shift alt e" />
     <keyboard-shortcut first-keystroke="ctrl alt x" />
   </action>
+  <action id="Run Mypy Daemon">
+    <keyboard-shortcut first-keystroke="shift ctrl m" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt m" />
+  </action>
 </keymap>
