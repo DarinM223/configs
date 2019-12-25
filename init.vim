@@ -79,6 +79,7 @@ Plugin 'sickill/vim-monokai'
 Plugin 'morhetz/gruvbox'
 
 " language based plugins
+Plugin 'autozimu/LanguageClient-neovim'    " LSP client for neovim.
 Plugin 'adimit/prolog.vim'                 " prolog
 Plugin 'pangloss/vim-javascript'           " javascript
 Plugin 'marijnh/tern_for_vim'              " javascript autocompletion
@@ -91,6 +92,7 @@ Plugin 'timonv/vim-cargo'                  " Rust cargo runner
 Plugin 'Chiel92/vim-autoformat'            " custom formatting with rustfmt integration
 Plugin 'tpope/vim-fireplace'               " clojure dynamic evaluation
 Plugin 'idris-hackers/idris-vim'           " idris mode
+Plugin 'ziglang/zig.vim'                   " zig
 Plugin 'purescript-contrib/purescript-vim' " purescript
 
 " Clojure structured editing of lisp s expressions
@@ -207,6 +209,13 @@ else
     " colorscheme monokai
     colorscheme gruvbox
 endif
+
+" LanguageClient-neovim configuration
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ }
+let g:LanguageClient_useVirtualText = 0
+let g:LanguageClient_diagnosticsMaxSeverity = "Error"
 
 "
 " YouCompleteMe Configuration
