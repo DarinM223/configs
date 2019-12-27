@@ -216,6 +216,37 @@ let g:LanguageClient_serverCommands = {
     \ }
 let g:LanguageClient_useVirtualText = 0
 let g:LanguageClient_diagnosticsMaxSeverity = "Error"
+let g:LanguageClient_diagnosticsDisplay =
+            \ {
+            \     1: {
+            \         "name": "Error",
+            \         "texthl": "ALEError",
+            \         "signText": "",
+            \         "signTexthl": "ALEErrorSign",
+            \         "virtualTexthl": "Error",
+            \     },
+            \     2: {
+            \         "name": "Warning",
+            \         "texthl": "ALEWarning",
+            \         "signText": "⚠",
+            \         "signTexthl": "ALEWarningSign",
+            \         "virtualTexthl": "Todo",
+            \     },
+            \     3: {
+            \         "name": "Information",
+            \         "texthl": "ALEInfo",
+            \         "signText": "ℹ",
+            \         "signTexthl": "ALEInfoSign",
+            \         "virtualTexthl": "Todo",
+            \     },
+            \     4: {
+            \         "name": "Hint",
+            \         "texthl": "ALEInfo",
+            \         "signText": "➤",
+            \         "signTexthl": "ALEInfoSign",
+            \         "virtualTexthl": "Todo",
+            \     },
+            \ }
 
 "
 " YouCompleteMe Configuration
@@ -226,7 +257,6 @@ let g:LanguageClient_diagnosticsMaxSeverity = "Error"
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:ycm_add_preview_to_completeopt=1
 let g:ycm_autoclose_preview_window_after_completion=0
-let g:ycm_semantic_triggers = {'haskell' : ['.']}
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 " The path to the rust source code for Rust autocompletion
 let g:ycm_rust_src_path = "/home/d/Documents/git/rust/rust"
