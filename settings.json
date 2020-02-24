@@ -2,7 +2,10 @@
     "keyboard.dispatch": "keyCode",
     "editor.fontSize": 13,
     "editor.parameterHints.enabled": false,
+    "editor.dragAndDrop": false,
     "metals.javaHome": "/usr/lib/jvm/java-8-openjdk-amd64",
     "workbench.colorTheme": "Gruvbox Dark (Hard)",
     "C_Cpp.updateChannel": "Insiders",
+    "editor.minimap.enabled": false,
+    "dotty.trace.machineId": "09dcd1b4-cfcb-4a9b-88ba-ead0edc1d873",
 }
