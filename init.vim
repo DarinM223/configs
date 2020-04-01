@@ -94,6 +94,7 @@ Plugin 'tpope/vim-fireplace'               " clojure dynamic evaluation
 Plugin 'idris-hackers/idris-vim'           " idris mode
 Plugin 'ziglang/zig.vim'                   " zig
 Plugin 'purescript-contrib/purescript-vim' " purescript
+Plugin 'jpalardy/vim-slime'                " send-to-repl for haskell and python
 
 " Clojure structured editing of lisp s expressions
 " Go to ~/.vim/bundle/parinfer-rust and run `cargo build --release`.
@@ -156,6 +157,8 @@ if has('nvim')
     " Drop highlighting when redrawing with Ctrl-l
     nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 endif
+" Ctrl-a selects all text in file
+map <C-a> <esc>gg0vG$<CR>
 " Ctrl-n toggles NERDTree
 map <C-n> :NERDTreeTabsToggle<CR>
 " Ctrl-c copies to clipboard
@@ -349,6 +352,13 @@ else
     let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|node_modules$\|bower_components$\|env$'
     let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 endif
+
+"
+" vim-slime configuration
+"
+" Press Ctrl-c Ctrl-c to send the selection to the repl.
+" To find the tmux id of the repl pane, run `echo $TMUX_PANE` in the pane.
+let g:slime_target = "tmux"
 
 ""
 "" Airline configuration
