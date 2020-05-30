@@ -91,7 +91,7 @@ Plugin 'rust-lang/rust.vim'                " rust syntax
 Plugin 'timonv/vim-cargo'                  " Rust cargo runner
 Plugin 'Chiel92/vim-autoformat'            " custom formatting with rustfmt integration
 Plugin 'tpope/vim-fireplace'               " clojure dynamic evaluation
-Plugin 'idris-hackers/idris-vim'           " idris mode
+Plugin 'edwinb/idris2-vim'                 " idris mode
 Plugin 'ziglang/zig.vim'                   " zig
 Plugin 'purescript-contrib/purescript-vim' " purescript
 Plugin 'jpalardy/vim-slime'                " send-to-repl for haskell and python
@@ -301,10 +301,9 @@ let g:syntastic_always_populate_loc_list=1
 
 " prevent scala files from taking forever to save
 let g:syntastic_mode_map = {'mode': 'active',
-            \ 'passive_filetypes': ['java', 'scala'] }
+            \ 'passive_filetypes': ['java', 'scala', 'python', 'go'] }
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_haskell_checkers = ['hlint']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 "
 " vim-autoformat configuration for rustfmt and scalafmt
