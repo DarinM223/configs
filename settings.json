@@ -1,11 +1,25 @@
 {
     "keyboard.dispatch": "keyCode",
+    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontSize": 13,
     "editor.parameterHints.enabled": false,
     "editor.dragAndDrop": false,
     "metals.javaHome": "/usr/lib/jvm/java-8-openjdk-amd64",
     "workbench.colorTheme": "Gruvbox Dark (Hard)",
     "C_Cpp.updateChannel": "Insiders",
-    "editor.minimap.enabled": false,
+    "editor.minimap.enabled": true,
     "dotty.trace.machineId": "09dcd1b4-cfcb-4a9b-88ba-ead0edc1d873",
+    "rust-analyzer.inlayHints.typeHints": false,
+    "rust-analyzer.inlayHints.chainingHints": false,
+    "editor.tabSize": 2,
+    "editor.minimap.showSlider": "always",
+    "[rust]": {
+        "editor.tabSize": 4
+    },
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
+    "update.mode": "manual"
 }
