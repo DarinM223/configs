@@ -10,7 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # new_window 1pixel
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border none
 
 client.focused #cccc00 #cccc00 #ffffff #dddddd
 client.focused_inactive #333333 #333333 #888888 #292d2e
@@ -60,14 +60,13 @@ bindsym $mod+f exec dmenu_run
 # for_window [class=".*"] border pixel 3
 
 # change focus
-bindsym $mod+h [class=".*"] border pixel 2; focus left
-bindsym $mod+j [class=".*"] border pixel 2; focus down
-bindsym $mod+k [class=".*"] border pixel 2; focus up
-bindsym $mod+l [class=".*"] border pixel 2; focus right
-bindsym --release $mod+h [class=".*"] border pixel 0
-bindsym --release $mod+j [class=".*"] border pixel 0
-bindsym --release $mod+k [class=".*"] border pixel 0
-bindsym --release $mod+l [class=".*"] border pixel 0
+bindsym $mod+h [class=".*"] focus left
+bindsym $mod+j [class=".*"] focus down
+bindsym $mod+k [class=".*"] focus up
+bindsym $mod+l [class=".*"] focus right
+
+bindcode $mod+23 [class=".*"] border pixel 1
+bindcode $mod+23 --release [class=".*"] border none
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -188,6 +187,8 @@ exec --no-startup-id pa-applet
 # NOTE(DarinM223): use `xdpyinfo | grep "dimensions"` to show screen size.
 # Then put in the screen name into --output and the screen size into --mode
 exec --no-startup-id xrandr --output VGA-1 --mode 1280x768
+
+focus_follows_mouse no
 
 # NOTE(DarinM223): i3-gaps configuration starts here:
 smart_gaps on
