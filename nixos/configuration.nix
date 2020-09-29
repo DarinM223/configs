@@ -40,13 +40,42 @@
   # };
 
   # Set your time zone.
-  # time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "America/Los_Angeles";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget vim firefox git
+    wget
+    vim
+    xorg.xdpyinfo
+    firefox
+    git
+    pa_applet
+    lxappearance
+    redshift
   ];
+
+  fonts = {
+    fonts = with pkgs; [
+      ubuntu_font_family
+      dejavu_fonts
+      source-code-pro
+      source-sans-pro
+      source-serif-pro
+      fira-code
+      fira-code-symbols
+    ];
+    fontconfig = {
+      penultimate.enable = false;
+      # defaultFonts = {
+      #   serif = [ "Ubuntu" ];
+      #   sansSerif = [ "Ubuntu" ];
+      #   monospace = [ "Ubuntu" ];
+      # };
+      antialias = true;
+      hinting.autohint = false;
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -72,8 +101,8 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver = {
@@ -88,7 +117,23 @@
     windowManager.i3.package = pkgs.i3-gaps;
   };
   services.xserver.layout = "us";
-  services.xserver.xkbOptions = "eurosign:e";
+  services.xserver.xkbOptions = "eurosign:e,caps:escape";
+
+  services.redshift = {
+    enable = true;
+    brightness = {
+      day = "0.8";
+      night = "0.7";
+    };
+    temperature.day = 5700;
+    temperature.night = 3500;
+  };
+  # Los Angeles time
+  location = {
+    latitude = 34.05223;
+    longitude = -118.24368;
+    provider = "manual";
+  };
 
   # Enable touchpad support.
   # services.xserver.libinput.enable = true;
@@ -117,5 +162,7 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "20.03"; # Did you read the comment?
 
+  # NOTE(DarinM223): disable this when not using virtualbox.
+  nixpkgs.config.virtualbox.host.enableExtensionPack = true;
 }
 

@@ -1,3 +1,5 @@
+xterm*faceName: Source Code Pro
+xterm*faceSize: 9
 xterm*background: black
 xterm*foreground: white
 xterm*VT100.Translations: #override \
