@@ -46,7 +46,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
-    vim
+    neovim
     xorg.xdpyinfo
     firefox
     git
@@ -57,7 +57,6 @@
 
   fonts = {
     fonts = with pkgs; [
-      ubuntu_font_family
       dejavu_fonts
       source-code-pro
       source-sans-pro
@@ -67,11 +66,6 @@
     ];
     fontconfig = {
       penultimate.enable = false;
-      # defaultFonts = {
-      #   serif = [ "Ubuntu" ];
-      #   sansSerif = [ "Ubuntu" ];
-      #   monospace = [ "Ubuntu" ];
-      # };
       antialias = true;
       hinting.autohint = false;
     };
@@ -153,6 +147,31 @@
     home = "/home/d";
     extraGroups = [ "wheel" ];
   };
+
+  users.users.d.packages = with pkgs;
+    let
+      extensions = (with pkgs.vscode-extensions; [
+          ms-python.python
+        ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+	# {
+	#   name = "remote-ssh-edit";
+	#   publisher = "ms-vscode-remote";
+	#   version = "0.47.2";
+	#   sha256 = "1hp6gjh4xp2m1xlm1jsdzxw9d8frkiidhph6nvl24d0h8z34w49g";
+	# }
+      ];
+      vscodium-with-extensions = pkgs.vscode-with-extensions.override {
+        vscode = pkgs.vscodium;
+	vscodeExtensions = extensions;
+      };
+    in
+      [
+        vscodium-with-extensions
+      ];
+
+  # with pkgs; [
+  #   vscodium
+  # ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

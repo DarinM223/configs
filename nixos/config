@@ -60,10 +60,10 @@ bindsym $mod+f exec dmenu_run
 # for_window [class=".*"] border pixel 3
 
 # change focus
-bindsym $mod+h [class=".*"] focus left
-bindsym $mod+j [class=".*"] focus down
-bindsym $mod+k [class=".*"] focus up
-bindsym $mod+l [class=".*"] focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 bindcode $mod+23 [class=".*"] border pixel 1
 bindcode $mod+23 --release [class=".*"] border none
