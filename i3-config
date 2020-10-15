@@ -10,7 +10,9 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 new_window 1pixel
-for_window [class=".*"] border pixel 1
+# for_window [instance="caja"] floating enable, resize set 800 640, move scratchpad
+for_window [title=".*Tor Browser"] layout tabbed
+for_window [class=".*"] border pixel 0
 
 set $mod Mod4
 
@@ -38,6 +40,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+bindsym $mod+g exec i3-input -F 'mark %s'
+bindsym $mod+x scratchpad show
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -59,6 +64,9 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+
+bindcode $mod+23 [class=".*"] border pixel 3
+bindcode $mod+23 --release [class=".*"] border none
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -174,3 +182,4 @@ bar {
 # from https://github.com/fernandotcl/pa-applet
 exec --no-startup-id pa-applet
 exec --no-startup-id redshift-gtk
+exec --no-startup-id feh --bg-scale ~/.background-image
