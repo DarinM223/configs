@@ -1,5 +1,12 @@
+DigitalAssetHoldingsLLC.ghcide
 JakeBecker.elixir-ls
+julialang.language-julia
+justusadam.language-haskell
+lampepfl.dotty
+matklad.rust-analyzer
+ms-python.python
 ms-vscode.cpptools
+ms-vscode.vscode-js-profile-flame
 rust-lang.rust
 scala-lang.scala
 scalameta.metals
