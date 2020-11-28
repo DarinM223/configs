@@ -18,7 +18,7 @@ for_window [class=".*"] border pixel 0
 set $mod Mod4
 
 # Binds caps-lock to escape
-setxkbmap -option caps:escape
+exec "setxkbmap -option caps:escape"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -68,8 +68,8 @@ bindsym $mod+l focus right
 
 
 # mod+; temporarily turns on borders on focused window
-bindcode $mod+47 [id="__focused__"] border pixel 4
-bindcode $mod+47 --release [id="__focused__"] border none
+bindcode $mod+47 border pixel 4
+bindcode $mod+47 --release border none
 
 # mod+tab turns on borders for all windows
 bindcode $mod+23 [class=".*"] border pixel 4
