@@ -13,9 +13,13 @@ new_window 1pixel
 # for_window [instance="caja"] floating enable, resize set 800 640, move scratchpad
 for_window [title=".*Tor Browser"] layout tabbed
 for_window [title=".*Visual Studio Code"] layout tabbed
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 1
 
-set $mod Mod4
+# Use this line to bind $mod to Windows key.
+# set $mod Mod4
+
+# Use this line to bind $mod to Alt key.
+set $mod Mod1
 
 # Binds caps-lock to escape
 exec "setxkbmap -option caps:escape"
@@ -56,9 +60,9 @@ bindsym $mod+f exec dmenu_run
 
 # Pulse Audio controls
 # NOTE(DarinM223): 1 is the sink number found with `pactl list sinks`
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5% #decrease sound volume
-bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle # mute sound
+# bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5% #increase sound volume
+# bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5% #decrease sound volume
+# bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle # mute sound
 
 # change focus
 bindsym $mod+h focus left
@@ -69,12 +73,12 @@ bindsym $mod+l focus right
 
 # mod+; temporarily turns on borders on focused window
 bindcode $mod+47 border pixel 4
-bindcode $mod+47 --release border none
+bindcode $mod+47 --release border pixel 1
 
 # mod+tab turns on borders for all windows
 bindcode $mod+23 [class=".*"] border pixel 4
 # mod+` turns off borders for all windows
-bindcode $mod+49 [class=".*"] border none
+bindcode $mod+49 [class=".*"] border pixel 1
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -188,6 +192,7 @@ bar {
 }
 
 focus_follows_mouse no
+hide_edge_borders smart
 
 # Starts pa-applet
 # NOTE(DarinM223): first install pa-applet by following the instructions
