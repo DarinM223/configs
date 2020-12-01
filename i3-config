@@ -13,7 +13,7 @@ new_window 1pixel
 # for_window [instance="caja"] floating enable, resize set 800 640, move scratchpad
 for_window [title=".*Tor Browser"] layout tabbed
 for_window [title=".*Visual Studio Code"] layout tabbed
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 0
 
 # Use this line to bind $mod to Windows key.
 # set $mod Mod4
@@ -73,12 +73,12 @@ bindsym $mod+l focus right
 
 # mod+; temporarily turns on borders on focused window
 bindcode $mod+47 border pixel 4
-bindcode $mod+47 --release border pixel 1
+bindcode $mod+47 --release border pixel 0
 
-# mod+tab turns on borders for all windows
-bindcode $mod+23 [class=".*"] border pixel 4
-# mod+` turns off borders for all windows
-bindcode $mod+49 [class=".*"] border pixel 1
+# mod+tab temporarily turns on borders for all windows in the current workspace
+bindcode $mod+23 [workspace="__focused__"] border pixel 3
+# mod+` turns off borders for all windows in the current workspace
+bindcode $mod+49 [workspace="__focused__"] border pixel 0
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -192,7 +192,6 @@ bar {
 }
 
 focus_follows_mouse no
-hide_edge_borders smart
 
 # Starts pa-applet
 # NOTE(DarinM223): first install pa-applet by following the instructions
