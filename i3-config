@@ -45,15 +45,81 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-# marks a window
-bindsym $mod+Shift+space exec i3-input -F 'mark %s' -P 'Mark: '
-# jumps to marked window
-bindsym $mod+space exec i3-input -F '[con_mark="%s"] focus' -P 'Goto: '
+bindsym $mod+Shift+Control+a mark "scratch_a", move scratchpad
+bindsym $mod+Shift+Control+b mark "scratch_b", move scratchpad
+bindsym $mod+Shift+Control+c mark "scratch_c", move scratchpad
+bindsym $mod+Shift+Control+d mark "scratch_d", move scratchpad
+bindsym $mod+Shift+Control+e mark "scratch_e", move scratchpad
+bindsym $mod+Shift+Control+f mark "scratch_f", move scratchpad
+bindsym $mod+Shift+Control+g mark "scratch_g", move scratchpad
+bindsym $mod+Shift+Control+h mark "scratch_h", move scratchpad
+bindsym $mod+Shift+Control+i mark "scratch_i", move scratchpad
+bindsym $mod+Shift+Control+j mark "scratch_j", move scratchpad
+bindsym $mod+Shift+Control+k mark "scratch_k", move scratchpad
+bindsym $mod+Shift+Control+l mark "scratch_l", move scratchpad
+bindsym $mod+Shift+Control+m mark "scratch_m", move scratchpad
+bindsym $mod+Shift+Control+n mark "scratch_n", move scratchpad
+bindsym $mod+Shift+Control+o mark "scratch_o", move scratchpad
+bindsym $mod+Shift+Control+p mark "scratch_p", move scratchpad
+bindsym $mod+Shift+Control+q mark "scratch_q", move scratchpad
+bindsym $mod+Shift+Control+r mark "scratch_r", move scratchpad
+bindsym $mod+Shift+Control+s mark "scratch_s", move scratchpad
+bindsym $mod+Shift+Control+t mark "scratch_t", move scratchpad
+bindsym $mod+Shift+Control+u mark "scratch_u", move scratchpad
+bindsym $mod+Shift+Control+v mark "scratch_v", move scratchpad
+bindsym $mod+Shift+Control+w mark "scratch_w", move scratchpad
+bindsym $mod+Shift+Control+x mark "scratch_x", move scratchpad
+bindsym $mod+Shift+Control+y mark "scratch_y", move scratchpad
+bindsym $mod+Shift+Control+z mark "scratch_z", move scratchpad
+bindsym $mod+Shift+Control+0 mark "scratch_0", move scratchpad
+bindsym $mod+Shift+Control+1 mark "scratch_1", move scratchpad
+bindsym $mod+Shift+Control+2 mark "scratch_2", move scratchpad
+bindsym $mod+Shift+Control+3 mark "scratch_3", move scratchpad
+bindsym $mod+Shift+Control+4 mark "scratch_4", move scratchpad
+bindsym $mod+Shift+Control+5 mark "scratch_5", move scratchpad
+bindsym $mod+Shift+Control+6 mark "scratch_6", move scratchpad
+bindsym $mod+Shift+Control+7 mark "scratch_7", move scratchpad
+bindsym $mod+Shift+Control+8 mark "scratch_8", move scratchpad
+bindsym $mod+Shift+Control+9 mark "scratch_9", move scratchpad
 
-# mod+Shift+tab moves window to scratchpad
-bindcode $mod+Shift+23 move scratchpad
-# mod+tab shows/hides a scratchpad window
-bindcode $mod+23 scratchpad show
+bindsym $mod+Control+a [con_mark="scratch_a"] scratchpad show
+bindsym $mod+Control+b [con_mark="scratch_b"] scratchpad show
+bindsym $mod+Control+c [con_mark="scratch_c"] scratchpad show
+bindsym $mod+Control+d [con_mark="scratch_d"] scratchpad show
+bindsym $mod+Control+e [con_mark="scratch_e"] scratchpad show
+bindsym $mod+Control+f [con_mark="scratch_f"] scratchpad show
+bindsym $mod+Control+g [con_mark="scratch_g"] scratchpad show
+bindsym $mod+Control+h [con_mark="scratch_h"] scratchpad show
+bindsym $mod+Control+i [con_mark="scratch_i"] scratchpad show
+bindsym $mod+Control+j [con_mark="scratch_j"] scratchpad show
+bindsym $mod+Control+k [con_mark="scratch_k"] scratchpad show
+bindsym $mod+Control+l [con_mark="scratch_l"] scratchpad show
+bindsym $mod+Control+m [con_mark="scratch_m"] scratchpad show
+bindsym $mod+Control+n [con_mark="scratch_n"] scratchpad show
+bindsym $mod+Control+o [con_mark="scratch_o"] scratchpad show
+bindsym $mod+Control+p [con_mark="scratch_p"] scratchpad show
+bindsym $mod+Control+q [con_mark="scratch_q"] scratchpad show
+bindsym $mod+Control+r [con_mark="scratch_r"] scratchpad show
+bindsym $mod+Control+s [con_mark="scratch_s"] scratchpad show
+bindsym $mod+Control+t [con_mark="scratch_t"] scratchpad show
+bindsym $mod+Control+u [con_mark="scratch_u"] scratchpad show
+bindsym $mod+Control+v [con_mark="scratch_v"] scratchpad show
+bindsym $mod+Control+w [con_mark="scratch_w"] scratchpad show
+bindsym $mod+Control+x [con_mark="scratch_x"] scratchpad show
+bindsym $mod+Control+y [con_mark="scratch_y"] scratchpad show
+bindsym $mod+Control+z [con_mark="scratch_z"] scratchpad show
+bindsym $mod+Control+0 [con_mark="scratch_0"] scratchpad show
+bindsym $mod+Control+1 [con_mark="scratch_1"] scratchpad show
+bindsym $mod+Control+2 [con_mark="scratch_2"] scratchpad show
+bindsym $mod+Control+3 [con_mark="scratch_3"] scratchpad show
+bindsym $mod+Control+4 [con_mark="scratch_4"] scratchpad show
+bindsym $mod+Control+5 [con_mark="scratch_5"] scratchpad show
+bindsym $mod+Control+6 [con_mark="scratch_6"] scratchpad show
+bindsym $mod+Control+7 [con_mark="scratch_7"] scratchpad show
+bindsym $mod+Control+8 [con_mark="scratch_8"] scratchpad show
+bindsym $mod+Control+9 [con_mark="scratch_9"] scratchpad show
+
+bindsym $mod+x scratchpad show
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -115,10 +181,10 @@ bindsym $mod+t layout tabbed
 bindsym $mod+c layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+g floating toggle
+bindsym $mod+Shift+space floating toggle
 
-## change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 #bindsym $mod+a focus parent
