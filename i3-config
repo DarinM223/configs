@@ -45,6 +45,10 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# disable switching windows on mouse scroll
+bindsym button4 nop
+bindsym button5 nop
+
 bindsym $mod+Shift+Control+a mark "scratch_a", move scratchpad
 bindsym $mod+Shift+Control+b mark "scratch_b", move scratchpad
 bindsym $mod+Shift+Control+c mark "scratch_c", move scratchpad
