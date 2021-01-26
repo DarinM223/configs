@@ -39,6 +39,8 @@
 ; NOTE: Run (ql:quickload "clhs") first and follow the instructions.
 (load "~/quicklisp/clhs-use-local.el" t)
 
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+
 (use-package parinfer
   :ensure t
   :bind
