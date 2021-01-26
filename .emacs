@@ -5,8 +5,10 @@
 ;
 
 (setq inhibit-startup-screen t)
-(setq inferior-lisp-program "/usr/bin/sbcl")
-(setq slime-contribs '(slime-fancy slime-cl-indent))
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+(setq slime-contribs '(slime-fancy slime-indentation))
+(setq lisp-indent-function 'common-lisp-indent-function)
+(setq common-lisp-style-default "sbcl")
 
 (require 'package)
 
@@ -38,8 +40,6 @@
 
 ; NOTE: Run (ql:quickload "clhs") first and follow the instructions.
 (load "~/quicklisp/clhs-use-local.el" t)
-
-(setq inferior-lisp-program "/usr/local/bin/sbcl")
 
 (use-package parinfer
   :ensure t
@@ -98,11 +98,17 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (gruvbox-dark-medium)))
+ '(custom-enabled-themes '(gruvbox-dark-medium))
  '(custom-safe-themes
-   (quote
-    ("8f97d5ec8a774485296e366fdde6ff5589cf9e319a584b845b6f7fa788c9fa9a" default))))
+   '("7661b762556018a44a29477b84757994d8386d6edee909409fabe0631952dad9" "8f97d5ec8a774485296e366fdde6ff5589cf9e319a584b845b6f7fa788c9fa9a" default))
+ '(package-selected-packages
+   '(use-package solarized-theme racket-mode py-autopep8 parinfer neotree monokai-theme lispy linum-relative gruvbox-theme evil elscreen elpy dirtree async ac-slime)))
 (custom-set-faces)
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
