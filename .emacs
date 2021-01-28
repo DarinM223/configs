@@ -78,20 +78,18 @@
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'slime-repl-mode))
 
+(slime-setup '(slime-fancy))
+
 (require 'evil)
 (evil-mode 1)
 (load "elscreen" "ElScreen" t)
 (elscreen-start)
 (linum-relative-global-mode)
 
+; Fix for Evil overriding Slime's M-. keybinding
 (define-key evil-normal-state-map (kbd "M-.")
   `(menu-item "" evil-repeat-pop :filter
               ,(lambda (cmd) (if (eq last-command 'evil-repeat-pop) cmd))))
-
-(define-key evil-normal-state-map (kbd "C-t") 'elscreen-create)   ; create tab with `C-t`
-(define-key evil-normal-state-map (kbd "C-w x") 'elscreen-kill)   ; kill tab with `C-w x`
-(define-key evil-normal-state-map "gT" 'elscreen-previous)        ; previous tab
-(define-key evil-normal-state-map "gt" 'elscreen-next)            ; next tab
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
