@@ -1,17 +1,17 @@
 defmodule History do
   @default_history_size 100
-  @history_path "~/.ex_history.ex"
+  @history_path Path.expand("~/.ex_history.ex")
 
   def write(num \\ @default_history_size, path \\ @history_path) do
     {:ok, :ok} =
-      File.open(Path.expand(path), [:write, :utf8], fn file ->
+      File.open(path, [:write, :utf8], fn file ->
         write_history(file, num)
       end)
   end
 
   def append(num \\ @default_history_size, path \\ @history_path) do
     {:ok, :ok} =
-      File.open(Path.expand(path), [:append, :utf8], fn file ->
+      File.open(path, [:append, :utf8], fn file ->
         IO.write(file, '\n')
         write_history(file, num)
       end)
