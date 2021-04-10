@@ -26,6 +26,9 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Fixes weird cursor bug in guake and other terminals.
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+
 set guicursor=
 " Workaround some broken plugins which set guicursor indiscriminately.
 autocmd OptionSet guicursor noautocmd set guicursor=
@@ -51,16 +54,14 @@ Plug 'scrooloose/nerdtree'        " project file explorer on left pane: open wit
 Plug 'jistr/vim-nerdtree-tabs'    " doesn't glitch when using vim tabs
 Plug 'tpope/vim-fugitive'         " git functions inside vim
 Plug 'justinmk/vim-sneak'         " jump to code with s key and two letters
-Plug 'scrooloose/syntastic.git'   " display errors in code
 Plug 'scrooloose/nerdcommenter'   " comment with \cl or \cc and undo with \cu
 Plug 'ctrlpvim/ctrlp.vim'         " Just like sublime's ctrl-p fuzzy search through project
 Plug 'mattn/emmet-vim'            " HTML Zen coding plugin <C-y>, to activate
 Plug 'alvan/vim-closetag'         " Close tags automatically in HTML-like files
 
 " themes
-Plug 'vivkin/flatland.vim'
-Plug 'jordwalke/flatlandia'
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
+Plug 'sainnhe/sonokai'
 
 " language based plugins
 Plug 'autozimu/LanguageClient-neovim'    " LSP client for neovim.
@@ -79,6 +80,7 @@ Plug 'edwinb/idris2-vim'                 " idris mode
 Plug 'ziglang/zig.vim'                   " zig
 Plug 'purescript-contrib/purescript-vim' " purescript
 Plug 'jpalardy/vim-slime'                " send-to-repl for haskell and python
+Plug 'neovimhaskell/haskell-vim'
 
 " Clojure structured editing of lisp s expressions
 " Go to ~/.vim/bundle/parinfer-rust and run `cargo build --release`.
@@ -87,7 +89,6 @@ Plug 'eraserhd/parinfer-rust'
 Plug 'nvie/vim-flake8'                     " python linter plugin
 Plug 'elixir-lang/vim-elixir'              " elixir highlighting and indentation
 Plug 'mtscout6/syntastic-local-eslint.vim' " Prefer local eslint over global
-Plug 'dag/vim2hs'                          " haskell tools
 
 call plug#end() " required
 filetype plugin indent on " required
@@ -164,10 +165,10 @@ if !has('nvim')
 endif
 
 if has('gui_running')
-    colorscheme flatlandia
 else
     set mouse=a
-    colorscheme gruvbox
+    set t_Co=256
+    colorscheme sonokai
 endif
 
 " LanguageClient-neovim configuration
@@ -239,28 +240,13 @@ else
 endif
 
 "
-" Syntastic Configuration
+" Haskell-vim configuration
 "
-let g:syntastic_enable_highlighting=0
-let g:syntastic_python_flake8_args='--ignore=E501, E225'
 
-" NOTE: if you want syntastic to check eslint you have to
-" install eslint using npm
-" let g:syntastic_javascript_checkers = ['eslint'] " uncomment for eslint
-
-" NOTE: if you want syntastic to check standard you have to install
-" it using npm
-" Uses javascript standard style (https://github.com/feross/standard)
-" by default
-let g:syntastic_javascript_checkers = ['standard']
-
-let g:syntastic_always_populate_loc_list=1
-
-" prevent scala files from taking forever to save
-let g:syntastic_mode_map = {'mode': 'active',
-            \ 'passive_filetypes': ['java', 'scala', 'python', 'go'] }
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_haskell_checkers = ['hlint']
+let g:haskell_enable_quantification=1
+let g:haskell_enable_recursivedo=1
+let g:haskell_enable_pattern_synonyms=1
+let g:haskell_disable_TH=1
 
 "
 " vim-autoformat configuration for rustfmt and scalafmt
