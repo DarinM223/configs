@@ -47,16 +47,13 @@ filetype off                  " required!
 " Plugins
 "
 
-" Essential plugins: Every vim fanboy needs to have these plugins!
-
+" essential plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'        " project file explorer on left pane: open with <C-n>
 Plug 'jistr/vim-nerdtree-tabs'    " doesn't glitch when using vim tabs
-Plug 'tpope/vim-fugitive'         " git functions inside vim
 Plug 'justinmk/vim-sneak'         " jump to code with s key and two letters
 Plug 'scrooloose/nerdcommenter'   " comment with \cl or \cc and undo with \cu
 Plug 'ctrlpvim/ctrlp.vim'         " Just like sublime's ctrl-p fuzzy search through project
-Plug 'mattn/emmet-vim'            " HTML Zen coding plugin <C-y>, to activate
 Plug 'alvan/vim-closetag'         " Close tags automatically in HTML-like files
 
 " themes
@@ -64,12 +61,8 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/sonokai'
 
 " language based plugins
-Plug 'autozimu/LanguageClient-neovim'    " LSP client for neovim.
-Plug 'adimit/prolog.vim'                 " prolog
 Plug 'pangloss/vim-javascript'           " javascript
-Plug 'marijnh/tern_for_vim'              " javascript autocompletion
 Plug 'mxw/vim-jsx'                       " jsx
-Plug 'digitaltoad/vim-jade'              " jade
 Plug 'derekwyatt/vim-scala'              " scala
 Plug 'fatih/vim-go'                      " golang
 Plug 'rust-lang/rust.vim'                " rust syntax
@@ -79,16 +72,15 @@ Plug 'tpope/vim-fireplace'               " clojure dynamic evaluation
 Plug 'edwinb/idris2-vim'                 " idris mode
 Plug 'ziglang/zig.vim'                   " zig
 Plug 'purescript-contrib/purescript-vim' " purescript
+Plug 'neovimhaskell/haskell-vim'         " haskell
 Plug 'jpalardy/vim-slime'                " send-to-repl for haskell and python
-Plug 'neovimhaskell/haskell-vim'
 
 " Clojure structured editing of lisp s expressions
 " Go to ~/.vim/bundle/parinfer-rust and run `cargo build --release`.
 Plug 'eraserhd/parinfer-rust'
 
-Plug 'nvie/vim-flake8'                     " python linter plugin
-Plug 'elixir-lang/vim-elixir'              " elixir highlighting and indentation
-Plug 'mtscout6/syntastic-local-eslint.vim' " Prefer local eslint over global
+Plug 'nvie/vim-flake8'                   " python linter plugin
+Plug 'elixir-lang/vim-elixir'            " elixir highlighting and indentation
 
 call plug#end() " required
 filetype plugin indent on " required
@@ -164,50 +156,18 @@ if !has('nvim')
     set term=xterm-256color
 endif
 
+" NOTE(DarinM223): This should work on mate-terminal but it doesn't :(
+"if exists('+termguicolors')
+"  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"  set termguicolors
+"endif
+
 if has('gui_running')
 else
     set mouse=a
-    set t_Co=256
     colorscheme sonokai
 endif
-
-" LanguageClient-neovim configuration
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ }
-let g:LanguageClient_useVirtualText = 0
-let g:LanguageClient_diagnosticsMaxSeverity = "Error"
-let g:LanguageClient_diagnosticsDisplay =
-            \ {
-            \     1: {
-            \         "name": "Error",
-            \         "texthl": "ALEError",
-            \         "signText": "",
-            \         "signTexthl": "ALEErrorSign",
-            \         "virtualTexthl": "Error",
-            \     },
-            \     2: {
-            \         "name": "Warning",
-            \         "texthl": "ALEWarning",
-            \         "signText": "⚠",
-            \         "signTexthl": "ALEWarningSign",
-            \         "virtualTexthl": "Todo",
-            \     },
-            \     3: {
-            \         "name": "Information",
-            \         "texthl": "ALEInfo",
-            \         "signText": "ℹ",
-            \         "signTexthl": "ALEInfoSign",
-            \         "virtualTexthl": "Todo",
-            \     },
-            \     4: {
-            \         "name": "Hint",
-            \         "texthl": "ALEInfo",
-            \         "signText": "➤",
-            \         "signTexthl": "ALEInfoSign",
-            \         "virtualTexthl": "Todo",
-            \     },
-            \ }
 
 let g:go_fmt_command = "gofmt"
 let g:go_fmt_autosave = 1
