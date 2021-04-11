@@ -288,3 +288,5 @@ au Filetype go set tabstop=4
 au FileType cs setl sts=4 noexpandtab
 
 au BufNewFile,BufRead *.ejs set filetype=html
+
+hi TabLineSel ctermbg=DarkGrey
