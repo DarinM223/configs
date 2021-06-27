@@ -21,9 +21,6 @@ for_window [class=".*"] border pixel 0
 # Use this line to bind $mod to Alt key.
 set $mod Mod1
 
-# Binds caps-lock to escape
-exec "setxkbmap -option caps:escape"
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 8
@@ -44,6 +41,8 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+
+bindsym $mod+Shift+Return exec firefox
 
 # disable switching windows on mouse scroll
 bindsym button4 nop
@@ -269,8 +268,13 @@ focus_follows_mouse no
 # NOTE(DarinM223): first install pa-applet by following the instructions
 # from https://github.com/fernandotcl/pa-applet
 exec --no-startup-id pa-applet
+exec --no-startup-id nm-applet
 # NOTE(DarinM223): first install xbindkeys, xsel, and xdotool with apt-get
 # Don't forget to create a .xbindkeysrc file to turn off middle mouse click paste!
 exec --no-startup-id xbindkeys
 exec --no-startup-id redshift-gtk
 exec --no-startup-id feh --bg-scale ~/.background-image
+
+# Binds caps-lock to Ctrl and allows single Ctrl press to work as Escape
+# NOTE(DarinM223): first install xcape with `sudo apt-get install xcape`
+exec --no-startup-id "setxkbmap -option ctrl:nocaps && xcape -t 0 -e 'Control_L=Escape'"
