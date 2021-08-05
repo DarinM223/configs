@@ -14,6 +14,7 @@
 
 (setq package-list '(auto-complete
                      evil
+                     elscreen
                      use-package
                      parinfer
                      racket-mode
@@ -82,12 +83,18 @@
 
 (require 'evil)
 (evil-mode 1)
+(load "elscreen" "ELScreen" t)
+(elscreen-start)
 (linum-relative-global-mode)
 
 ; Fix for Evil overriding Slime's M-. keybinding
 (define-key evil-normal-state-map (kbd "M-.")
   `(menu-item "" evil-repeat-pop :filter
               ,(lambda (cmd) (if (eq last-command 'evil-repeat-pop) cmd))))
+
+(eval-after-load 'clojure-mode
+  '(define-clojure-indent
+       (match 1)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -165,12 +172,12 @@
    ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#eee8d5"])
  '(xterm-color-names-bright
    ["#002b36" "#cb4b16" "#586e75" "#657b83" "#839496" "#6c71c4" "#93a1a1" "#fdf6e3"]))
-(custom-set-faces
+(custom-set-faces)
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ 
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
