@@ -52,7 +52,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'        " project file explorer on left pane: open with <C-n>
 Plug 'jistr/vim-nerdtree-tabs'    " doesn't glitch when using vim tabs
 Plug 'justinmk/vim-sneak'         " jump to code with s key and two letters
-Plug 'scrooloose/nerdcommenter'   " comment with \cl or \cc and undo with \cu
+" Plug 'scrooloose/nerdcommenter'   " comment with \cl or \cc and undo with \cu
+                                    " commenting out because it interacts
+                                    " badly with idris2-vim
 Plug 'ctrlpvim/ctrlp.vim'         " Just like sublime's ctrl-p fuzzy search through project
 Plug 'alvan/vim-closetag'         " Close tags automatically in HTML-like files
 
@@ -119,8 +121,6 @@ map <C-n> :NERDTreeTabsToggle<CR>
 vmap <C-C> "+y
 " Ctrl-t opens a new tab
 nnoremap <C-t> :tabnew<CR>
-" Ctrl-f formats using Neoformat (right now only formatting Haskell).
-nnoremap <C-f> :Neoformat<CR>
 
 " Meta (Alt) key with the left and right arrow keys will move a tab
 " to the left/right position.

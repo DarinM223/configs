@@ -18,6 +18,7 @@
                      use-package
                      parinfer
                      racket-mode
+                     sml-mode
                      slime
                      ac-slime
                      gruvbox-theme
@@ -61,6 +62,11 @@
     (add-hook 'lisp-mode-hook #'parinfer-mode)
     (add-hook 'racket-mode-hook #'parinfer-mode)))
 
+(use-package sml-mode
+   :config
+   (push (lambda () electric-indent-local-mode 1) sml-mode-hook))
+(setq sml-indent-level 2)
+
 (setq-default indent-tabs-mode nil)
 
 (setq evil-want-C-u-scroll t)
@@ -94,7 +100,7 @@
 
 (eval-after-load 'clojure-mode
   '(define-clojure-indent
-       (match 1)))
+     (match 1)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -173,6 +179,11 @@
  '(xterm-color-names-bright
    ["#002b36" "#cb4b16" "#586e75" "#657b83" "#839496" "#6c71c4" "#93a1a1" "#fdf6e3"]))
 (custom-set-faces)
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.

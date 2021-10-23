@@ -16,10 +16,10 @@ for_window [title=".*Visual Studio Code"] layout tabbed
 for_window [class=".*"] border pixel 0
 
 # Use this line to bind $mod to Windows key.
-# set $mod Mod4
+set $mod Mod4
 
 # Use this line to bind $mod to Alt key.
-set $mod Mod1
+# set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -137,9 +137,9 @@ bindsym $mod+f exec dmenu_run
 
 # Pulse Audio controls
 # NOTE(DarinM223): 1 is the sink number found with `pactl list sinks`
-# bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5% #increase sound volume
-# bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5% #decrease sound volume
-# bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle # mute sound
 
 # mod+; temporarily turns on borders on focused window
 bindcode $mod+47 border pixel 4
@@ -277,4 +277,4 @@ exec --no-startup-id feh --bg-scale ~/.background-image
 
 # Binds caps-lock to Ctrl and allows single Ctrl press to work as Escape
 # NOTE(DarinM223): first install xcape with `sudo apt-get install xcape`
-exec --no-startup-id "setxkbmap -option ctrl:nocaps && xcape -t 0 -e 'Control_L=Escape'"
+exec --no-startup-id "setxkbmap -option ctrl:nocaps -option altwin:swap_alt_win && xcape -t 0 -e 'Control_L=Escape'"

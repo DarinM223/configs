@@ -16,6 +16,9 @@
     "[rust]": {
         "editor.tabSize": 4
     },
+    "[python]": {
+        "editor.tabSize": 4,
+    },
     "files.watcherExclude": {
         "**/.bloop": true,
         "**/.metals": true,
@@ -24,5 +27,10 @@
     "update.mode": "manual",
     "julia.execution.resultType": "both",
     "julia.enableCrashReporter": false,
-    "julia.enableTelemetry": false
+    "julia.enableTelemetry": false,
+    "window.menuBarVisibility": "toggle",
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "haskell.formatOnImportOn": false
 }
