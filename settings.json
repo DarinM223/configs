@@ -1,16 +1,22 @@
 {
+    "vim.easymotion": true,
+    "vim.leader": " ",
+    "files.trimTrailingWhitespace": true,
     "keyboard.dispatch": "keyCode",
     "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontSize": 13,
     "editor.parameterHints.enabled": false,
     "editor.dragAndDrop": false,
-    "metals.javaHome": "/usr/lib/jvm/java-8-openjdk-amd64",
-    "workbench.colorTheme": "Gruvbox Dark (Hard)",
-    "C_Cpp.updateChannel": "Insiders",
-    "editor.minimap.enabled": false,
-    "dotty.trace.machineId": "09dcd1b4-cfcb-4a9b-88ba-ead0edc1d873",
-    "rust-analyzer.inlayHints.typeHints": false,
-    "rust-analyzer.inlayHints.chainingHints": false,
+    "metals.javaHome": "/usr/lib/jvm/java-11-openjdk-amd64",
+    "editor.semanticTokenColorCustomizations": {
+        "rules": {
+            "*.mutable": {
+              "fontStyle": "", // underline is the default
+            },
+        }
+    },
+    "editor.folding": false,
+    "editor.snippetSuggestions": "top",
     "editor.tabSize": 2,
     "editor.minimap.showSlider": "always",
     "[rust]": {
@@ -28,9 +34,28 @@
     "julia.execution.resultType": "both",
     "julia.enableCrashReporter": false,
     "julia.enableTelemetry": false,
-    "window.menuBarVisibility": "toggle",
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
-    "haskell.formatOnImportOn": false
+    "haskell.updateBehavior": "prompt",
+    "[ocaml]": {
+        "editor.acceptSuggestionOnEnter": "off"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "haskell.serverEnvironment": {
+        "PATH": "${HOME}/.ghcup/bin:$PATH"
+    },
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "haskell.trace.client": "debug",
+    "haskell.trace.server": "messages",
+    "haskell.manageHLS": "GHCup",
+    "haskell.ghcupExecutablePath": "/home/d/.ghcup/bin/ghcup",
+    "millet.server.diagnostics.onChange.enable": true,
+    "window.menuBarVisibility": "toggle",
 }
