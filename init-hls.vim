@@ -20,7 +20,7 @@
 "
 " Sets relative line numbering when entering a buffer, set line highlight
 " on cursor, and set timeout from visual mode for nerdcommenter
-autocmd BufEnter * set relativenumber | set nu | set cursorline | set timeoutlen=5000
+autocmd BufEnter * set relativenumber | set nu | set cursorline | set timeoutlen=500
 " Exits completion preview window when exiting insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
@@ -53,6 +53,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'        " project file explorer on left pane: open with <C-n>
 Plug 'jistr/vim-nerdtree-tabs'    " doesn't glitch when using vim tabs
 Plug 'justinmk/vim-sneak'         " jump to code with s key and two letters
+Plug 'petertriho/nvim-scrollbar'
 " Plug 'scrooloose/nerdcommenter'   " comment with \cl or \cc and undo with \cu
                                     " commenting out because it interacts
                                     " badly with idris2-vim
@@ -108,6 +109,7 @@ endif
 " Activate language servers on neovim
 lua << EOF
   local nvim_lsp = require('lspconfig')
+  require("scrollbar").setup()
 
   local on_attach = function(client)
       -- Mappings
@@ -198,6 +200,8 @@ noremap <C-K>k <C-W>W
 noremap <C-L>l <C-W>l
 noremap <C-H>h <C-W>h
 
+noremap <C-F> :CocSearch 
+
 "
 " Vim Explore mode configuration
 " Configures the presentation of the Vim explore mode
@@ -225,6 +229,7 @@ endif
 "endif
 
 if has('gui_running')
+    colorscheme sonokai
 else
     set mouse=a
     colorscheme sonokai
@@ -245,13 +250,24 @@ let purescript_indent_in = 0
 "
 "
 
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
@@ -320,6 +336,8 @@ endif
 " To find the tmux id of the repl pane, run `echo $TMUX_PANE` in the pane.
 let g:slime_target = "tmux"
 
+vnoremap <C-c> "+y
+
 "
 " CloseTag.vim configuration
 "
@@ -353,3 +371,4 @@ au FileType cs setl sts=4 noexpandtab
 au BufNewFile,BufRead *.ejs set filetype=html
 
 hi TabLineSel ctermbg=DarkGrey
+
