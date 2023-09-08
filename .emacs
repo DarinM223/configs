@@ -24,7 +24,8 @@
                      gruvbox-theme
                      solarized-theme
                      cider
-                     linum-relative))
+                     linum-relative
+                     treemacs-evil))
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
@@ -97,6 +98,13 @@
   '(define-clojure-indent
      (match 1)))
 
+(require 'treemacs-evil)
+
+; Bind meta-0 key to open root project in NERDTree like pane.
+(global-set-key (kbd "M-0") #'treemacs-add-and-display-current-project-exclusively)
+(with-eval-after-load 'treemacs
+  (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -138,7 +146,7 @@
  '(nrepl-message-colors
    '("#dc322f" "#cb4b16" "#b58900" "#5b7300" "#b3c34d" "#0061a8" "#2aa198" "#d33682" "#6c71c4"))
  '(package-selected-packages
-   '(geiser use-package solarized-theme py-autopep8 parinfer-rust neotree monokai-theme lispy linum-relative gruvbox-theme evil elpy dirtree async ac-slime))
+   '(treemacs-evil geiser use-package solarized-theme py-autopep8 parinfer-rust monokai-theme lispy linum-relative gruvbox-theme evil elpy dirtree async ac-slime))
  '(pdf-view-midnight-colors '("#fdf4c1" . "#282828"))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
@@ -192,5 +200,15 @@
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; YOUR INIT FILE SHOULD contain only one such instance.
  ;; If there is more than one, they won't work right.
  
