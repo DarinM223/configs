@@ -16,7 +16,7 @@
                      evil
                      elscreen
                      use-package
-                     parinfer
+                     parinfer-rust-mode
                      racket-mode
                      sml-mode
                      slime
@@ -43,24 +43,19 @@
 ; NOTE: Run (ql:quickload "clhs") first and follow the instructions.
 (load "~/quicklisp/clhs-use-local.el" t)
 
-(use-package parinfer
+(use-package parinfer-rust-mode
   :ensure t
   :bind
-  (("C-," . parinfer-toggle-mode))
+  (("C-," . parinfer-rust-toggle-paren-mode))
+  :hook emacs-lisp-mode clojure-mode common-lisp-mode scheme-mode lisp-mode racket-mode
   :init
   (progn
-    (setq parinfer-extensions
+    (setq parinfer-rust-auto-download t)
+    (setq parinfer-rust-extensions
           '(defaults       ; should be included.
             pretty-parens  ; different paren styles for different modes.
             evil           ; If you use Evil.
-            smart-tab))    ; Allows changing indentation of regions with tab.
-
-    (add-hook 'clojure-mode-hook #'parinfer-mode)
-    (add-hook 'emacs-lisp-mode-hook #'parinfer-mode)
-    (add-hook 'common-lisp-mode-hook #'parinfer-mode)
-    (add-hook 'scheme-mode-hook #'parinfer-mode)
-    (add-hook 'lisp-mode-hook #'parinfer-mode)
-    (add-hook 'racket-mode-hook #'parinfer-mode)))
+            smart-tab))))    ; Allows changing indentation of regions with tab.
 
 (use-package sml-mode
    :config
@@ -118,7 +113,7 @@
  '(cua-read-only-cursor-color "#859900")
  '(custom-enabled-themes '(gruvbox-dark-medium))
  '(custom-safe-themes
-   '("d9646b131c4aa37f01f909fbdd5a9099389518eb68f25277ed19ba99adeb7279" "d14f3df28603e9517eb8fb7518b662d653b25b26e83bd8e129acea042b774298" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "0fffa9669425ff140ff2ae8568c7719705ef33b7a927a0ba7c5e2ffcfac09b75" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "7661b762556018a44a29477b84757994d8386d6edee909409fabe0631952dad9" "8f97d5ec8a774485296e366fdde6ff5589cf9e319a584b845b6f7fa788c9fa9a" default))
+   '("046a2b81d13afddae309930ef85d458c4f5d278a69448e5a5261a5c78598e012" "d9646b131c4aa37f01f909fbdd5a9099389518eb68f25277ed19ba99adeb7279" "d14f3df28603e9517eb8fb7518b662d653b25b26e83bd8e129acea042b774298" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "0fffa9669425ff140ff2ae8568c7719705ef33b7a927a0ba7c5e2ffcfac09b75" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "7661b762556018a44a29477b84757994d8386d6edee909409fabe0631952dad9" "8f97d5ec8a774485296e366fdde6ff5589cf9e319a584b845b6f7fa788c9fa9a" default))
  '(fci-rule-color "#073642")
  '(highlight-changes-colors '("#d33682" "#6c71c4"))
  '(highlight-symbol-colors
@@ -143,7 +138,7 @@
  '(nrepl-message-colors
    '("#dc322f" "#cb4b16" "#b58900" "#5b7300" "#b3c34d" "#0061a8" "#2aa198" "#d33682" "#6c71c4"))
  '(package-selected-packages
-   '(geiser use-package solarized-theme py-autopep8 parinfer neotree monokai-theme lispy linum-relative gruvbox-theme evil elpy dirtree async ac-slime))
+   '(geiser use-package solarized-theme py-autopep8 parinfer-rust neotree monokai-theme lispy linum-relative gruvbox-theme evil elpy dirtree async ac-slime))
  '(pdf-view-midnight-colors '("#fdf4c1" . "#282828"))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
@@ -179,6 +174,11 @@
  '(xterm-color-names-bright
    ["#002b36" "#cb4b16" "#586e75" "#657b83" "#839496" "#6c71c4" "#93a1a1" "#fdf6e3"]))
 (custom-set-faces)
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
