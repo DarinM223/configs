@@ -24,16 +24,24 @@
 			"let* $1 in"
 		]
 	},
-  "In": {
-    "prefix": "in",
-    "body": [ "in\n" ]
-  },
-  "Do": {
-    "prefix": "do",
-    "body": [
-      "do",
-      "\t$1",
-      "done"
-    ]
-  }
+	"In": {
+		"prefix": "in",
+		"body": [
+			"in\n"
+		]
+	},
+	"Do": {
+		"prefix": "do",
+		"body": [
+			"do",
+			"\t$1",
+			"done"
+		]
+	},
+	"Failwith": {
+		"prefix": "fail",
+		"body": [
+			"failwith \"\""
+		]
+	}
 }

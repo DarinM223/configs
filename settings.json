@@ -19,7 +19,7 @@
         }
     },
     "editor.folding": false,
-    "editor.snippetSuggestions": "top",
+    "editor.snippetSuggestions": "inline",
     "editor.tabSize": 2,
     "editor.minimap.showSlider": "always",
     "[rust]": {
