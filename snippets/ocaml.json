@@ -15,18 +15,18 @@
 	"Let syntax": {
 		"prefix": "let",
 		"body": [
-			"let ${1:()} = $2 in"
+			"let $1 in"
 		]
 	},
 	"Let star syntax": {
 		"prefix": "lets",
 		"body": [
-			"let* ${1:()} = $2 in"
+			"let* $1 in"
 		]
 	},
   "In": {
     "prefix": "in",
-    "body": [ "in" ]
+    "body": [ "in\n" ]
   },
   "Do": {
     "prefix": "do",

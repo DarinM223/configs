@@ -1,6 +1,9 @@
 {
     "vim.easymotion": true,
     "vim.leader": " ",
+    "vim.handleKeys": {
+        "<C-p>": false
+    },
     "files.trimTrailingWhitespace": true,
     "keyboard.dispatch": "keyCode",
     "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
@@ -24,6 +27,7 @@
     },
     "[python]": {
         "editor.tabSize": 4,
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "files.watcherExclude": {
         "**/.bloop": true,
@@ -38,9 +42,9 @@
         "language-julia.interrupt"
     ],
     "haskell.updateBehavior": "prompt",
-    "[ocaml]": {
-        "editor.acceptSuggestionOnEnter": "off"
-    },
+    // "[ocaml]": {
+    //     "editor.acceptSuggestionOnEnter": "off"
+    // },
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
