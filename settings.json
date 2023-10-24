@@ -1,4 +1,5 @@
 {
+    "telemetry.telemetryLevel": "off",
     "vim.easymotion": true,
     "vim.leader": " ",
     "vim.handleKeys": {
@@ -14,8 +15,8 @@
     "editor.semanticTokenColorCustomizations": {
         "rules": {
             "*.mutable": {
-              "fontStyle": "", // underline is the default
-            },
+              "fontStyle": "" // underline is the default
+            }
         }
     },
     "editor.folding": false,
@@ -61,5 +62,5 @@
     "haskell.manageHLS": "GHCup",
     "haskell.ghcupExecutablePath": "/home/d/.ghcup/bin/ghcup",
     "millet.server.diagnostics.onChange.enable": true,
-    "window.menuBarVisibility": "toggle",
+    "window.menuBarVisibility": "toggle"
 }
