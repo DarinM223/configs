@@ -15,8 +15,8 @@
     "editor.semanticTokenColorCustomizations": {
         "rules": {
             "*.mutable": {
-              "fontStyle": "" // underline is the default
-            }
+                "fontStyle": "", // underline is the default
+            },
         }
     },
     "editor.folding": false,
@@ -61,6 +61,18 @@
     "haskell.trace.server": "messages",
     "haskell.manageHLS": "GHCup",
     "haskell.ghcupExecutablePath": "/home/d/.ghcup/bin/ghcup",
-    "millet.server.diagnostics.onChange.enable": true,
-    "window.menuBarVisibility": "toggle"
+    "window.menuBarVisibility": "toggle",
+    "cmake.configureOnOpen": true,
+    "millet.server.path": "/home/d/Documents/rust/millet/target/release/millet-ls",
+    "millet.format.engine": "smlfmt",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "python.defaultInterpreterPath": "/home/d/Documents/python/leetcode/venv",
+    "python.analysis.typeCheckingMode": "strict",
+    "workbench.colorTheme": "Default Dark+",
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "haskell.formattingProvider": "fourmolu"
 }

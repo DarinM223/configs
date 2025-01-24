@@ -1,0 +1,20 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "shift+alt+enter",
+    "command": "workbench.action.terminal.runSelectedText"
+  },
+  // Place your key bindings in this file to override the defaultsauto[]
+  {
+    "key": "ctrl+shift+r",
+    "command": "workbench.action.reloadWindow"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.reloadWindow",
+    "when": "isDevelopment"
+  },
+  { "key": "ctrl+e f",
+    "command": "insert-unicode.insertText",
+  }
+]
