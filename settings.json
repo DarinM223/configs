@@ -3,76 +3,96 @@
     "vim.easymotion": true,
     "vim.leader": " ",
     "vim.handleKeys": {
-        "<C-p>": false
+        "<C-p>": false,
+        "<C-a>": false
     },
+    "vim.foldfix": true,
     "files.trimTrailingWhitespace": true,
     "keyboard.dispatch": "keyCode",
-    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontSize": 13,
+    "editor.fontFamily": "DejaVu Sans Mono",
+    "editor.fontSize": 14,
     "editor.parameterHints.enabled": false,
     "editor.dragAndDrop": false,
-    "metals.javaHome": "/usr/lib/jvm/java-11-openjdk-amd64",
     "editor.semanticTokenColorCustomizations": {
         "rules": {
             "*.mutable": {
-                "fontStyle": "", // underline is the default
-            },
+                "fontStyle": "" // underline is the default
+            }
         }
     },
-    "editor.folding": false,
+    "editor.folding": true,
     "editor.snippetSuggestions": "inline",
     "editor.tabSize": 2,
     "editor.minimap.showSlider": "always",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "update.mode": "manual",
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "native",
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "workbench.navigationControl.enabled": false,
+    "workbench.colorTheme": "Default Dark+",
+    "chat.agent.enabled": false,
+    "chat.commandCenter.enabled": false,
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
+    "files.readonlyInclude": {
+        "**/.cargo/registry/src/**/*.rs": true,
+        "**/.cargo/git/checkouts/**/*.rs": true,
+        "**/lib/rustlib/src/rust/library/**/*.rs": true
+    },
     "[rust]": {
+        "editor.tabSize": 4
+    },
+    "[c]": {
         "editor.tabSize": 4
     },
     "[python]": {
         "editor.tabSize": 4,
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "files.watcherExclude": {
-        "**/.bloop": true,
-        "**/.metals": true,
-        "**/.ammonite": true
+    "[go]": {
+        "editor.tabSize": 4
     },
-    "update.mode": "manual",
     "julia.execution.resultType": "both",
     "julia.enableCrashReporter": false,
     "julia.enableTelemetry": false,
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
-    "haskell.updateBehavior": "prompt",
-    // "[ocaml]": {
-    //     "editor.acceptSuggestionOnEnter": "off"
-    // },
     "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "haskell.serverEnvironment": {
         "PATH": "${HOME}/.ghcup/bin:$PATH"
-    },
-    "rust-analyzer.inlayHints.chainingHints.enable": false,
-    "rust-analyzer.inlayHints.typeHints.enable": false,
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "haskell.trace.client": "debug",
     "haskell.trace.server": "messages",
     "haskell.manageHLS": "GHCup",
     "haskell.ghcupExecutablePath": "/home/d/.ghcup/bin/ghcup",
-    "window.menuBarVisibility": "toggle",
-    "cmake.configureOnOpen": true,
-    "millet.server.path": "/home/d/Documents/rust/millet/target/release/millet-ls",
-    "millet.format.engine": "smlfmt",
-    "editor.inlayHints.enabled": "offUnlessPressed",
-    "diffEditor.ignoreTrimWhitespace": false,
+    "haskell.plugin.ormolu.config.external": true,
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "rust-analyzer.inlayHints.typeHints.enable": false,
     "python.defaultInterpreterPath": "/home/d/Documents/python/leetcode/venv",
     "python.analysis.typeCheckingMode": "strict",
-    "workbench.colorTheme": "Default Dark+",
+    "python.analysis.typeEvaluation.strictSetInference": true,
+    "python.analysis.typeEvaluation.strictListInference": true,
+    "python.analysis.typeEvaluation.strictDictionaryInference": true,
+    "cmake.configureOnOpen": true,
     "cmake.pinnedCommands": [
         "workbench.action.tasks.configureTaskRunner",
         "workbench.action.tasks.runTask"
     ],
-    "haskell.formattingProvider": "fourmolu"
+    "cmake.options.statusBarVisibility": "visible",
+    "millet.format.engine": "smlfmt",
+    "millet.server.path": "/home/d/Documents/mirrored/millet/target/release/millet-ls",
+    "C_Cpp.default.cppStandard": "c++23",
+    "C_Cpp.default.cStandard": "c11"
 }
