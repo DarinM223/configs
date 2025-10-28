@@ -25,7 +25,7 @@
     "editor.tabSize": 2,
     "editor.minimap.showSlider": "always",
     "editor.inlayHints.enabled": "offUnlessPressed",
-    "diffEditor.ignoreTrimWhitespace": false,
+    "truediffEditor.ignoreTrimWhitespace": false,
     "update.mode": "manual",
     "window.menuBarVisibility": "toggle",
     "window.titleBarStyle": "native",
@@ -33,6 +33,7 @@
     "workbench.layoutControl.enabled": false,
     "workbench.navigationControl.enabled": false,
     "workbench.colorTheme": "Default Dark+",
+    "chat.disableAIFeatures": true,
     "chat.agent.enabled": false,
     "chat.commandCenter.enabled": false,
     "files.watcherExclude": {
@@ -94,5 +95,47 @@
     "millet.format.engine": "smlfmt",
     "millet.server.path": "/home/d/Documents/mirrored/millet/target/release/millet-ls",
     "C_Cpp.default.cppStandard": "c++23",
-    "C_Cpp.default.cStandard": "c11"
+    "C_Cpp.default.cStandard": "c11",
+    "cursorless.hatEnablement.colors": {
+        "blue": true,
+        "green": true,
+        "red": false,
+        "pink": false,
+        "yellow": true,
+        "userColor1": false,
+        "userColor2": false
+    },
+    "cursorless.colors.dark": {
+        "default": "#B9B6CD",
+        "blue": "#089ad3",
+        "green": "#36B33F",
+        "red": "#E02D28",
+        "pink": "#E06CAA",
+        "yellow": "#E5C02C",
+        "userColor1": "#ffffff",
+        "userColor2": "#ffd8b1"
+    },
+    "cursorless.colors.light": {
+        "default": "#757180",
+        "blue": "#089ad3",
+        "green": "#36B33F",
+        "red": "#E02D28",
+        "pink": "#e0679f",
+        "yellow": "#edb62b",
+        "userColor1": "#000000",
+        "userColor2": "#ffd8b1"
+    },
+    "cursorless.hatEnablement.shapes": {
+        "bolt": false,
+        "curve": false,
+        "fox": true,
+        "frame": false,
+        "play": true,
+        "wing": false,
+        "hole": true,
+        "ex": false,
+        "crosshairs": false,
+        "eye": false
+    },
+    "window.title": "${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}focus:[${focusedView}]"
 }
