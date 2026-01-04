@@ -1,0 +1,18 @@
+{
+	"Typedef struct": {
+		"prefix": "tystruct",
+		"body": [
+			"typedef struct $1 {",
+			"    $2",
+			"} $1;"
+		]
+	},
+	"Typedef enum": {
+		"prefix": "tyenum",
+		"body": [
+			"typedef enum $1 {",
+			"    $2",
+			"} $1;"
+		]
+	}
+}

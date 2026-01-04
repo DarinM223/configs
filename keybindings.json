@@ -15,6 +15,16 @@
     "when": "isDevelopment"
   },
   { "key": "ctrl+e f",
-    "command": "insert-unicode.insertText",
+    "command": "insert-unicode.insertText"
+  },
+  {
+    "key": "alt+q",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+shift+q",
+    "command": "editor.action.moveSelectionToNextFindMatch",
+    "when": "editorFocus"
   }
 ]

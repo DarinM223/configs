@@ -1,0 +1,30 @@
+{
+	"Include Guard": {
+		"prefix": "#guard",
+		"body": [
+			"#ifndef ${TM_FILENAME_BASE/((?<=[a-z])[A-Z]+|(?<=[a-z])[0-9]+|(?<=[0-9])[A-Z](?![A-Z]))|(.)/${1:+_}${0:/upcase}/g}_H",
+			"#define ${TM_FILENAME_BASE/((?<=[a-z])[A-Z]+|(?<=[a-z])[0-9]+|(?<=[0-9])[A-Z](?![A-Z]))|(.)/${1:+_}${0:/upcase}/g}_H",
+			"",
+			"${0:// Code Here}",
+			"",
+			"#endif // ${TM_FILENAME_BASE/((?<=[a-z])[A-Z]+|(?<=[a-z])[0-9]+|(?<=[0-9])[A-Z](?![A-Z]))|(.)/${1:+_}${0:/upcase}/g}_H"
+		],
+		"description": "Add a C/C++ include guard to the file",
+		"scope": "c,cpp",
+		"isFileTemplate": true
+	},
+	"Interactive Include Guard": {
+		"prefix": "#iguard",
+		"body": [
+			"#ifndef ${1:${TM_FILENAME_BASE/((?<=[a-z])[A-Z]+|(?<=[a-z])[0-9]+|(?<=[0-9])[A-Z](?![A-Z]))|(.)/${1:+_}${0:/upcase}/g}_H}",
+			"#define ${1:${TM_FILENAME_BASE/((?<=[a-z])[A-Z]+|(?<=[a-z])[0-9]+|(?<=[0-9])[A-Z](?![A-Z]))|(.)/${1:+_}${0:/upcase}/g}_H}",
+			"",
+			"${0:// Code Here}",
+			"",
+			"#endif // ${1:${TM_FILENAME_BASE/((?<=[a-z])[A-Z]+|(?<=[a-z])[0-9]+|(?<=[0-9])[A-Z](?![A-Z]))|(.)/${1:+_}${0:/upcase}/g}_H}"
+		],
+		"description": "Add a C/C++ include guard to the file, with the option to manually specify the guard name (interactive)",
+		"scope": "c,cpp",
+		"isFileTemplate": true
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"Side effect": {
+		"prefix": "do",
+		"body": [
+			"val () = $1"
+		]
+	},
+	"Binding": {
+		"prefix": "val",
+		"body": [
+			"val $1 = $2"
+		]
+	},
+	"Print line": {
+		"prefix": "println",
+		"body": [
+			"print ($1 ^ \"\\n\")"
+		]
+	}
+}

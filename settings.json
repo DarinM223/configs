@@ -25,6 +25,8 @@
     "editor.tabSize": 2,
     "editor.minimap.showSlider": "always",
     "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.mouseWheelScrollSensitivity": 1.2,
+    "extensions.ignoreRecommendations": true,
     "truediffEditor.ignoreTrimWhitespace": false,
     "update.mode": "manual",
     "window.menuBarVisibility": "toggle",
@@ -66,10 +68,10 @@
         "language-julia.interrupt"
     ],
     "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "haskell.serverEnvironment": {
         "PATH": "${HOME}/.ghcup/bin:$PATH"
@@ -86,6 +88,7 @@
     "python.analysis.typeEvaluation.strictSetInference": true,
     "python.analysis.typeEvaluation.strictListInference": true,
     "python.analysis.typeEvaluation.strictDictionaryInference": true,
+    "ruff.format.backend": "uv",
     "cmake.configureOnOpen": true,
     "cmake.pinnedCommands": [
         "workbench.action.tasks.configureTaskRunner",
@@ -98,7 +101,7 @@
     "C_Cpp.default.cStandard": "c11",
     "cursorless.hatEnablement.colors": {
         "blue": true,
-        "green": true,
+        "green": false,
         "red": false,
         "pink": false,
         "yellow": true,
@@ -137,5 +140,9 @@
         "crosshairs": false,
         "eye": false
     },
-    "window.title": "${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}focus:[${focusedView}]"
+    "window.title": "${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}focus:[${focusedView}]",
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "clangd.path": "/home/d/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/21.1.0/clangd_21.1.0/bin/clangd"
 }

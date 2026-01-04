@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Icon=emblem-favorite
+Type=Application
+Name=Talon
+Exec=sh /home/d/Downloads/talon-linux/talon/run.sh
